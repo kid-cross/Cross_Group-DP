@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>some page</title>
+	<link rel="stylesheet" href="css/s.css">
+
+	<!--js frameworks and libraries-->
+	<script src='/js/libraries/angular.min.js'></script>
+	<script src='/js/libraries/JQ.js'></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body ng-app='MyApp' ng-controller='FirstController'>
+	<header>
+	<div class="cap">
+		<h3>{{title}}</h3>
+	</div>
+	<div class="nav">
+		<ul>
+			<li>Home</li>
+			<li>Galery</li>
+			<li>About us</li>
+		</ul>
+	</div>
+	</header>
+	<aside>
+	<ul>
+		<li>Сайты</li>
+		<li>Управление</li>
+		<li>Маркетинг</li>
+		<li>Реклама</li>
+		<li>Фирменный стиль</li>
+	</ul>
+	</aside>
+	<section class='conteiner'>
+	<div class="services">
+	<h2 class='titleOfServices'>Услуги</h2>
+	<p class="description">{{ descriptions }}</p>
+		<div class="row-6" ng-repeat='service in services'>
+			<h1>{{ service.title }}</h1>
+			<div class="price"><p>{{ service.dateCommon | date }}</p></div>
+			<img ng-src="{{ service.ImageSrc }}" alt="{{ service.title }}">
+			<p class="description">{{ service.description }}</h2>
+			<p class="likes" ng-click="plusOne($index)">+{{ service.likes }} </p>
+		</div>
+	</div>
+	</section>
+	</body>
+	 <!-- Modules -->
+    <script src="/js/modules/app.js"></script>
+    <!--Controllers-->
+	<script src='/js/controllers/FirstController.js'></script>
+</html>
